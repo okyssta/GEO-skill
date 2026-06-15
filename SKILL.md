@@ -1,3 +1,16 @@
+---
+name: geo-skill
+description: "Unified GEO+SEO skill for optimizing websites for both traditional search engines and AI-powered answer engines (ChatGPT, Perplexity, Claude, Gemini). Covers technical setup, content strategy, platform-specific guides, and monitoring."
+license: MIT
+compatibility: "Works with any web stack: WordPress, React, Vite, Next.js, Hugo, Jekyll, static sites. Requires curl and bash for audit scripts."
+metadata:
+  version: 1.1.0
+  author: Hermes Agent
+  hermes:
+    tags: [geo, seo, ai-optimization, search-engine, content-strategy, structured-data]
+    related_skills: [seo-blog-automation, site-audit-report, elegant-sites]
+---
+
 # GEO+SEO: Generative Engine & Search Engine Optimization
 
 A unified skill for optimizing web content to rank in **both** traditional search engines (Google, Bing) **and** AI-powered answer engines (ChatGPT, Perplexity, Claude, Gemini, Bing Copilot).
@@ -16,8 +29,29 @@ A unified skill for optimizing web content to rank in **both** traditional searc
 
 1. **Audit** — Run `scripts/geo-audit.sh` against your site
 2. **Fix** — Follow the priority checklist in the audit report
-3. **Create** — Use `templates/` for new content
+3. **Create** — Use `assets/` for new content
 4. **Monitor** — Track AI visibility with the monitoring guide in `references/monitoring.md`
+
+## Installation Pitfalls
+
+### `hermes skills install` Name Collision
+If you run `hermes skills install <github-url>` and the hub already has a skill with the same name, **it installs the hub version, not your GitHub repo**. The fix:
+```bash
+# DON'T: hermes skills install https://github.com/kyssta-exe/GEO-skill
+# It may install a different skill from the hub registry
+
+# DO: Clone directly
+cd ~/.hermes/skills && git clone https://github.com/kyssta-exe/GEO-skill.git
+```
+Verify with skill_view — check the content matches what you expect.
+
+### Publishing to GitHub
+Use `gh repo create` with `--source . --push` to create a private repo and push in one step:
+```bash
+cd /path/to/skill-dir
+gh repo create GEO-skill --private --source . --push \
+  --description "Description here"
+```
 
 ## Core Principles
 
@@ -55,10 +89,10 @@ Traditional SEO and GEO are NOT separate strategies — they share 70%+ of the s
 - `scripts/schema-validator.py` — validate structured data
 
 ### Templates
-- `templates/geo-article.md` — article template optimized for both GEO and SEO
-- `templates/faq-section.md` — FAQ template with schema markup
-- `templates/llms-txt.md` — llms.txt file template
-- `templates/meta-tags.html` — meta tag template with Open Graph + schema
+- `assets/geo-article.md` — article template optimized for both GEO and SEO
+- `assets/faq-section.md` — FAQ template with schema markup
+- `assets/llms-txt.md` — llms.txt file template
+- `assets/meta-tags.html` — meta tag template with Open Graph + schema
 
 ---
 
