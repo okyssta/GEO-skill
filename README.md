@@ -13,10 +13,10 @@ A comprehensive skill for AI agents (Hermes, Claude Code, Codex, etc.) that prov
 ### For AI Agents
 ```bash
 # Install as a Hermes skill
-hermes skills install https://github.com/kyssta-exe/GEO-skill
+hermes skills install https://github.com/okyssta/GEO-skill
 
 # Or clone and use directly
-git clone https://github.com/kyssta-exe/GEO-skill.git
+git clone https://github.com/okyssta/GEO-skill.git
 ```
 
 ### For Humans

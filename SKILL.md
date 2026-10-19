@@ -37,11 +37,11 @@ A unified skill for optimizing web content to rank in **both** traditional searc
 ### `hermes skills install` Name Collision
 If you run `hermes skills install <github-url>` and the hub already has a skill with the same name, **it installs the hub version, not your GitHub repo**. The fix:
 ```bash
-# DON'T: hermes skills install https://github.com/kyssta-exe/GEO-skill
+# DON'T: hermes skills install https://github.com/okyssta/GEO-skill
 # It may install a different skill from the hub registry
 
 # DO: Clone directly
-cd ~/.hermes/skills && git clone https://github.com/kyssta-exe/GEO-skill.git
+cd ~/.hermes/skills && git clone https://github.com/okyssta/GEO-skill.git
 ```
 Verify with skill_view — check the content matches what you expect.
 
